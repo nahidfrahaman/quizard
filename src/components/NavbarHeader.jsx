@@ -32,7 +32,7 @@
               </li>
               <li>
                 <a
-                  href="/quiz"
+                  href="/quiz/1"
                   aria-label="Our product"
                   title="Our product"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"

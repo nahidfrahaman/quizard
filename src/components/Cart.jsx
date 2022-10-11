@@ -10,7 +10,7 @@ const Cart = ({topic,handleToStart}) => {
           <div className="card-actions justify-end mt-8">
             <button
              onClick={()=>handleToStart(id)}
-             className="btn bg-white text-teal-500"> <Link to="/quiz"> Start practice</Link></button>
+             className="btn bg-white text-teal-500"> <Link to={`/quiz/${id}`}> Start practice</Link></button>
           </div>
         </div>
     </div>

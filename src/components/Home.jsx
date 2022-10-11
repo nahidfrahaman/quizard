@@ -8,7 +8,7 @@ const Home = () => {
   const topics= useContext(TopicContext)
   
   const handleToStart =(id)=>{
-    console.log(id)
+    
   }
 
     return (
