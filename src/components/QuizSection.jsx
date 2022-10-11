@@ -11,7 +11,8 @@ const QuizSection = ({quizDatas}) => {
             <p className='text-2xl text-gray-400 font-bold text-center mt-3'>total quiz: {total}</p>
            <div className='mt-8 text-cente'>
            {
-            questions.map(qus=> <QuizDetails
+            questions.map((qus, index)=> <QuizDetails
+                quizNO={index +1}
                 qus={qus} 
                 key={qus.id}></QuizDetails>)
            }
