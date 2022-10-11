@@ -1,14 +1,20 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import NavbarHeader from './NavbarHeader';
+import React, { createContext } from 'react';
+import { Outlet, useLoaderData } from 'react-router-dom';
+import NavbarHeader from "./NavbarHeader";
+
+
+export const TopicContext= createContext([])
 
 const Root = () => {
+    const loaderData= useLoaderData()
+    const topicsData= loaderData.data
+    
+    
     return (
-        <div>
+        <TopicContext.Provider value={topicsData}>
             <NavbarHeader></NavbarHeader>
             <Outlet></Outlet>
-            
-        </div>
+        </TopicContext.Provider>
     );
 };
 
