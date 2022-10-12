@@ -1,5 +1,6 @@
 import React, { createContext } from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
+import Footer from './Footer';
 import NavbarHeader from "./NavbarHeader";
 
 
@@ -14,6 +15,7 @@ const Root = () => {
         <TopicContext.Provider value={topicsData}>
             <NavbarHeader></NavbarHeader>
             <Outlet></Outlet>
+            <Footer></Footer>
         </TopicContext.Provider>
     );
 };
