@@ -2,7 +2,11 @@
 
 ### Live website link [Quizard] (https://inquisitive-croissant-186392.netlify.app/home) 
 ## Discription 
-***Features 
+ * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+
+*Features 
  THis site have four routes , Home , Quiz , Statistics ,Blog 
  Home page have Header , topics
  quiz is for practice 
