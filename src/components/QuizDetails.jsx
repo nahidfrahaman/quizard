@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
 import Option from './Option';
 
@@ -6,11 +8,16 @@ import Option from './Option';
 
 
 const QuizDetails = ({qus,quizNO}) => {
+
+    
     
     const {question,options,correctAnswer}=qus
     console.log(correctAnswer)
 
-    const [color, setColor]= useState('');
+    const [color, setColor]= useState();
+    const handleTocolor=(col)=>{
+       setColor(col)
+    }
 
     const handleToQuizAns =(option)=>{
         
@@ -22,29 +29,53 @@ const QuizDetails = ({qus,quizNO}) => {
                 showConfirmButton: false,
                 timer: 1000
               })
-              setColor('bg-blue-500')
+             
          }else{
             Swal.fire({
+                position: 'top-center',
                 icon: 'error',
-                title: 'Oops... ',
-                text: 'Your Answer is wrong!',
-                
+                title: 'Opps! Your answer is wrong',
+                showConfirmButton: false,
+                timer: 1000
               })
          }
     }
+ 
+
+    
+    
+    const handleToShowAns=()=>{
+        
+        toast(`Right Answer is: ${correctAnswer}`)
+    }
 
     return (
-        <div className='w-[96%] lg:w-[50%] mx-auto bg-orange-200 mt-8 p-8 border rounded-md'>
+        <div className='w-[96%] lg:w-[50%] mx-auto bg-orange-200 mt-8 p-8 border rounded-md relative'>
             <h2 className='text-3xl'> Quiz:{quizNO}{question} </h2>
-            <p>correct Asn:</p>
+            
             {
               options.map((option, index)=> <Option 
+              handleToShowAns={handleToShowAns}
               handleToQuizAns={handleToQuizAns}
-                color={color} 
+              handleTocolor={handleTocolor}
+              color={color} 
                 key={index +1}
                 option={option}
                 ></Option>)
             }
+
+<ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
         </div>
     );
 };

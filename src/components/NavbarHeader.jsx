@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between">
             <NavLink
-              to="/"
+              
               aria-label="Company"
               title="Company"
               className="inline-flex items-center"
@@ -63,7 +63,7 @@ import { NavLink } from "react-router-dom";
               </li>
             </ul>
             
-            <div className="lg:hidden">
+            <div className="lg:hidden z-50	">
               <button
                 aria-label="Open Menu"
                 title="Open Menu"
