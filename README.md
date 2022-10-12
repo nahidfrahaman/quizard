@@ -1,4 +1,4 @@
-######### Project Quizard
+### Webiste name: Quizard
 
 ### Live website link [Quizard] (https://inquisitive-croissant-186392.netlify.app/home) 
 ## Discription 
