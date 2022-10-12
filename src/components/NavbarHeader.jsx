@@ -1,4 +1,5 @@
  import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
  const NavbarHeader = () => {
     
@@ -8,8 +9,8 @@
       <div className="bg-[#007D7C]">
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between">
-            <a
-              href="/"
+            <NavLink
+              to="/"
               aria-label="Company"
               title="Company"
               className="inline-flex items-center"
@@ -18,61 +19,50 @@
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                 Quizard
               </span>
-            </a>
+            </NavLink>
             <ul className="flex items-center hidden space-x-8 lg:flex">
               <li>
-                <a
-                  href="/home"
+                <NavLink
+                  to="/home"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
+                  className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400'}
+                   >
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/quiz/1"
+                <NavLink
+                  to="/quiz/1"
                   aria-label="Our product"
                   title="Our product"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400'}
                 >
                   Quiz
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/Statistics"
+                <NavLink
+                  to="/Statistics"
                   aria-label="Product pricing"
                   title="Product pricing"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400'}
                 >
                   Statistics
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/blog"
+                <NavLink
+                  to="/blog"
                   aria-label="About us"
                   title="About us"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400'}
                 >
                   Blog
-                </a>
+                </NavLink>
               </li>
             </ul>
-            <ul className="flex items-center hidden space-x-8 lg:flex">
-              <li>
-                <a
-                  href="/about"
-                  className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                  aria-label="Sign up"
-                  title="Sign up"
-                >
-                 About me
-                </a>
-              </li>
-            </ul>
+            
             <div className="lg:hidden">
               <button
                 aria-label="Open Menu"
@@ -97,7 +87,7 @@
               </button>
               {isMenuOpen && (
                 <div className="absolute top-0 left-0 w-full">
-                  <div className="p-5 bg-white border rounded shadow-sm">
+                  <div className="p-5 bg-[#007D7C] border rounded shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                       <div>
                         <a
@@ -145,55 +135,46 @@
                     <nav>
                       <ul className="space-y-4">
                         <li>
-                          <a
-                            href="/home"
+                          <NavLink
+                            to="/home"
                             aria-label="Our product"
                             title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400'}
                           >
                             Home
-                          </a>
+                          </NavLink>
                         </li>
                         <li>
-                          <a
-                            href="/quiz"
+                          <NavLink
+                            to="/quiz/1"
                             aria-label="Our product"
                             title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400'}
                           >
                             quiz
-                          </a>
+                          </NavLink>
                         </li>
                         <li>
-                          <a
-                            href="/blog"
+                          <NavLink
+                            to='/blog'
                             aria-label="Product pricing"
                             title="Product pricing"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400'}
                           >
                             blog
-                          </a>
+                          </NavLink>
                         </li>
                         <li>
-                          <a
-                            href="/statistics"
+                          <NavLink
+                            to='statistics'
                             aria-label="About us"
                             title="About us"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            className={({isActive})=> isActive? 'font-medium tracking-wide text-blue-400 transition-colors duration-200 hover:text-teal-accent-400': 'font-medium tracking-wide text-white transition-colors duration-200 hover:text-teal-accent-400'}
                           >
                             Statistics
-                          </a>
+                          </NavLink>
                         </li>
-                        <li>
-                          <a
-                            href="/about"
-                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-[#007D7C] transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                            aria-label="Sign up"
-                            title="Sign up"
-                          >
-                            about
-                          </a>
-                        </li>
+                        
                       </ul>
                     </nav>
                   </div>

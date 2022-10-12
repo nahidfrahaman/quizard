@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import Option from './Option';
 
@@ -10,7 +10,10 @@ const QuizDetails = ({qus,quizNO}) => {
     const {question,options,correctAnswer}=qus
     console.log(correctAnswer)
 
+    const [color, setColor]= useState('');
+
     const handleToQuizAns =(option)=>{
+        
          if (option === correctAnswer){
             Swal.fire({
                 position: 'top-center',
@@ -19,6 +22,7 @@ const QuizDetails = ({qus,quizNO}) => {
                 showConfirmButton: false,
                 timer: 1000
               })
+              setColor('bg-blue-500')
          }else{
             Swal.fire({
                 icon: 'error',
@@ -36,6 +40,7 @@ const QuizDetails = ({qus,quizNO}) => {
             {
               options.map((option, index)=> <Option 
               handleToQuizAns={handleToQuizAns}
+                color={color} 
                 key={index +1}
                 option={option}
                 ></Option>)
