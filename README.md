@@ -3,20 +3,17 @@
 ### Live website link [Quizard] (https://inquisitive-croissant-186392.netlify.app/home) 
 ## Discription 
  *  THis site have four routes , Home , Quiz , Statistics ,Blog 
- *  THis site have four routes , Home , Quiz , Statistics ,Blog      
-                  
+ *   Home page have Header , topics      
+ *   quiz page for quiz test
+ *  blog page for qus and answer 
+ *  statistics for simple rechart for showing the total number of quiz 
+ ## That componnet i used                
+ * Tailwind css 
+ * Tailwind css 
+ * daisy ui libery 
+ * kitwint 
 
-*Features 
- THis site have four routes , Home , Quiz , Statistics ,Blog 
- Home page have Header , topics
- quiz is for practice 
- statistics for a simple chart showing about quiz number data
- blog page is for 3 qus answer
- ***That componnet i used 
- Tailwind css 
- daisy ui libery 
- kitwint 
- ***speciallity 
- sweet alert 2 used for good lokking messge
- react tost
+ ## speciallity 
+ * sweet alert 2 used for good lokking messge
+ * react tost
  
